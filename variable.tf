@@ -1,6 +1,18 @@
 # Azure App Service Plan Variables
 
-variable "appservice_plan_name" {
+variable "resource_group_name" {
+  description = "App service plan resource group name"
+  type        = string
+  default     = ""
+}
+
+variable "location" {
+  description = "App service location"
+  type        = string
+  default     = ""
+}
+
+variable "name" {
   description = "App service plan name"
   type        = string
   default     = ""
@@ -11,9 +23,17 @@ variable "plan_settings" {
   description = "Definition of the dedicated plan to use"
 
   default = {
-    kind     = "Linux" # Linux or Windows
-    size     = "B1"
-    tier     = "Basic"
+    kind = "Linux" # Linux or Windows
+    size = "B1"
+    tier = "Basic"
   }
 }
 
+variable "tags" {
+  description = "A mapping of tags to assign to the resource"
+  type        = map(string)
+  default = {
+    "Environment" = ""
+    "BU"          = ""
+  }
+}
