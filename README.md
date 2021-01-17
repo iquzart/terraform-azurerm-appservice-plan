@@ -10,7 +10,7 @@ data "azurerm_resource_group" "rg" {
 
 
 module "appservice_plan" {
-  source  = "github.com/iquzart/azurerm-appservice-plan"
+  source  = "github.com/iquzart/terraform-azurerm-appservice-plan"
   #version = "0.x.y"
 
   resource_group_name = data.azurerm_resource_group.rg.name
