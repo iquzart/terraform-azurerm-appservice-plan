@@ -10,8 +10,8 @@ output "app_plan_kind" {
   value       = azurerm_app_service_plan.plan.kind
 }
 
-output "app_plan_sku" {
+output "app_plan_id" {
   description = "Tier of the App Service Plan"
-  value       = azurerm_app_service_plan.plan.sku[0]
+  value       = azurerm_app_service_plan.plan.id
 }
 
