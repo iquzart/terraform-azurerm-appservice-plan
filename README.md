@@ -28,16 +28,16 @@ module "appservice_plan" {
 
 # Input Variables
 ```
-| Name |	Description |	Type |	Default |	Required |
-|---|---|---|---|---|
-| resource_group_name  | The name of the resource group in which to create the App Service Plan component. | string  | na | yes |
-| location | Specifies the supported Azure location where the resource exists.  | string | na | yes |
-| name | Specifies the name of the App Service Plan component. Changing this forces a new resource to be created. | string | na | yes  |
+| Name | Description | Type |	Default |	Required |
+| --- | --- | --- | --- | --- |
+| resource_group_name | The name of the resource group in which to create the App Service Plan component. | string | na | yes |
+| location | Specifies the supported Azure location where the resource exists. | string | na | yes |
+| name | Specifies the name of the App Service Plan component. Changing this forces a new resource to be created. | string | na | yes |
 | kind | The kind of the App Service Plan to create. Possible values are Windows (also available as App), Linux, elastic (for Premium Consumption) and FunctionApp (for a Consumption Plan). Defaults to Windows. Changing this forces a new resource to be created | string | na | yes |
-| size | Specifies the plan's instance size  | string  | na |  yes |
-| tier | Specifies the plan's pricing tier  |  string | na | yes |
-| capacity | Specifies the number of workers associated with this App Service Plan | string  | null | no |
-| tags | A mapping of default tags to assign to the resource | map(string) | na | no  |
+| size | Specifies the plan's instance size | string | na | yes |
+| tier | Specifies the plan's pricing tier | string | na | yes |
+| capacity | Specifies the number of workers associated with this App Service Plan | string | null | no |
+| tags | A mapping of default tags to assign to the resource | map(string) | na | no |
 ```
 
 
