@@ -28,7 +28,7 @@ module "appservice_plan" {
 
 # Input Variables
 ```
-| Name | Description | Type |	Default |	Required |
+| Name | Description | Type |	Default | Required |
 | --- | --- | --- | --- | --- |
 | resource_group_name | The name of the resource group in which to create the App Service Plan component. | string | na | yes |
 | location | Specifies the supported Azure location where the resource exists. | string | na | yes |
