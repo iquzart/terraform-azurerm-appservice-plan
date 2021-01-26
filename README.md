@@ -1,4 +1,5 @@
 # Azure App Service Plan
+
 Terraform module to create Azure App Service Plan
 
 # Usage
@@ -11,46 +12,34 @@ data "azurerm_resource_group" "rg" {
 
 module "appservice_plan" {
   source  = "github.com/iquzart/terraform-azurerm-appservice-plan"
-  #version = "0.x.y"
+
 
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = data.azurerm_resource_group.rg.location
   name                = var.appservice_plan_name
-  plan_settings       = var.plan_settings
-  tags                = var.tags
+  kind                = var.kind
+  tier                = var.tier
+  size                = var.size
+  tags                = local.tags
+
 }
 
 ```
 
-# Variables
+# Input Variables
 ```
-variable "appservice_plan_name" {
-  description = "App service plan name"
-  type        = string
-  default     = "App-plan-B1-Linux"
-}
-
-variable "plan_settings" {
-  type        = map(string)
-  description = "Definition of the dedicated plan to use"
-
-  default = {
-    kind = "Linux" # Linux or Windows
-    size = "B1"
-    tier = "Basic"
-  }
-}
-
-variable "tags" {
-  description = "A mapping of tags to assign to the resource"
-  type        = map(string)
-  default = {
-    "Environment" = "Development"
-    "BU"          = "Information Technology"
-  }
-}
-
+| Name |	Description |	Type |	Default |	Required |
+|---|---|---|---|---|
+| resource_group_name  | The name of the resource group in which to create the App Service Plan component. | string  | na | yes |
+| location | Specifies the supported Azure location where the resource exists.  | string | na | yes |
+| name | Specifies the name of the App Service Plan component. Changing this forces a new resource to be created. | string | na | yes  |
+| kind | The kind of the App Service Plan to create. Possible values are Windows (also available as App), Linux, elastic (for Premium Consumption) and FunctionApp (for a Consumption Plan). Defaults to Windows. Changing this forces a new resource to be created | string | na | yes |
+| size | Specifies the plan's instance size  | string  | na |  yes |
+| tier | Specifies the plan's pricing tier  |  string | na | yes |
+| capacity | Specifies the number of workers associated with this App Service Plan | string  | null | no |
+| tags | A mapping of default tags to assign to the resource | map(string) | na | no  |
 ```
+
 
 # License
 MIT

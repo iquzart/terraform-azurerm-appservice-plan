@@ -1,39 +1,42 @@
 # Azure App Service Plan Variables
 
 variable "resource_group_name" {
-  description = "App service plan resource group name"
+  description = "(Required) The name of the resource group in which to create the App Service Plan component."
   type        = string
-  default     = ""
 }
 
 variable "location" {
-  description = "App service location"
+  description = "(Required) Specifies the supported Azure location where the resource exists"
   type        = string
-  default     = ""
 }
 
 variable "name" {
-  description = "App service plan name"
+  description = "(Required) Specifies the name of the App Service Plan component. Changing this forces a new resource to be created."
   type        = string
-  default     = ""
 }
 
-variable "plan_settings" {
-  type        = map(string)
-  description = "Definition of the dedicated plan to use"
+variable "kind" {
+  description = "(Optional) The kind of the App Service Plan to create. Possible values are Windows (also available as App), Linux, elastic (for Premium Consumption) and FunctionApp (for a Consumption Plan). Defaults to Windows. Changing this forces a new resource to be created"
+  type        = string
+}
 
-  default = {
-    kind = "Linux" # Linux or Windows
-    size = "B1"
-    tier = "Basic"
-  }
+variable "size" {
+  description = "(Required) Specifies the plan's instance size"
+  type        = string
+}
+
+variable "tier" {
+  description = "(Required) Specifies the plan's pricing tier"
+  type        = string
+}
+
+variable "capacity" {
+  description = "(Optional) Specifies the number of workers associated with this App Service Plan"
+  type        = string
+  default     = null 
 }
 
 variable "tags" {
-  description = "A mapping of tags to assign to the resource"
+  description = "(Optional) A mapping of default tags to assign to the resource"
   type        = map(string)
-  default = {
-    "Environment" = ""
-    "BU"          = ""
-  }
 }
