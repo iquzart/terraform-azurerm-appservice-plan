@@ -2,7 +2,7 @@
 
 Terraform module to create Azure App Service Plan
 
-# Usage
+## Usage
 ```
 data "azurerm_resource_group" "rg" {
   name = "RG_Apps"
@@ -26,7 +26,7 @@ module "appservice_plan" {
 
 ```
 
-# Input Variables
+## Input Variables
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | --- |
@@ -40,6 +40,8 @@ module "appservice_plan" {
 | tags | A mapping of default tags to assign to the resource | map(string) | na | no |
 
 
-
-# License
+## License
 MIT
+
+## Author Information
+Muhammed Iqbal <iquzart@hotmail.com>
