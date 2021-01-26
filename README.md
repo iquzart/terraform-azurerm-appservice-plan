@@ -27,7 +27,7 @@ module "appservice_plan" {
 ```
 
 # Input Variables
-```
+
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | --- |
 | resource_group_name | The name of the resource group in which to create the App Service Plan. | string | na | yes |
@@ -38,7 +38,7 @@ module "appservice_plan" {
 | tier | Specifies the plan's pricing tier | string | na | yes |
 | capacity | Specifies the number of workers associated with this App Service Plan | string | null | no |
 | tags | A mapping of default tags to assign to the resource | map(string) | na | no |
-```
+
 
 
 # License
